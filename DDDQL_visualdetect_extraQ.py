@@ -478,9 +478,9 @@ print("The environment has the following {} actions: {}".format(atari.env.action
 
 # main DQN and target DQN networks:
 with tf.variable_scope('mainDQN'):
-    MAIN_DQN = DDQN(atari.env.action_space.n, HIDDEN, LEARNING_RATE)   # (鈽呪槄)
+    MAIN_DQN = DDQN(atari.env.action_space.n, HIDDEN, LEARNING_RATE)   # 
 with tf.variable_scope('targetDQN'):
-    TARGET_DQN = DDQN(atari.env.action_space.n, HIDDEN)               # (鈽呪槄)
+    TARGET_DQN = DDQN(atari.env.action_space.n, HIDDEN)               # 
 
 init = tf.global_variables_initializer()
 saver = tf.train.Saver()    
@@ -517,7 +517,7 @@ PARAM_SUMMARIES = tf.summary.merge(ALL_PARAM_SUMMARIES)
 ###  Putting everything together
 def train():
     """Contains the training and evaluation loops"""
-    my_replay_memory = ReplayMemory(size=MEMORY_SIZE, batch_size=BS)   # (鈽�)
+    my_replay_memory = ReplayMemory(size=MEMORY_SIZE, batch_size=BS)   # 
     network_updater = TargetNetworkUpdater(MAIN_DQN_VARS, TARGET_DQN_VARS)
     action_getter = ActionGetter(atari.env.action_space.n, 
                                  replay_memory_start_size=REPLAY_MEMORY_START_SIZE, 
@@ -610,11 +610,11 @@ def train():
                     ### get loss function, UPDATE_FREQ =4, every 4 frames calc loss
                     if frame_number % UPDATE_FREQ == 0 and frame_number > REPLAY_MEMORY_START_SIZE:
                         loss = learn(sess, my_replay_memory, MAIN_DQN, TARGET_DQN,
-                                     BS, gamma = DISCOUNT_FACTOR) # (8鈽�)
+                                     BS, gamma = DISCOUNT_FACTOR) # 
                         loss_list.append(loss)
                         
                     if frame_number % NETW_UPDATE_FREQ == 0 and frame_number > REPLAY_MEMORY_START_SIZE:
-                        network_updater.update_networks(sess) # (9鈽�)
+                        network_updater.update_networks(sess) # 
                     
                     if terminal:
                         terminal = False
