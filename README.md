@@ -20,7 +20,7 @@ Run:
 
 after pip install all prerequisite python library:
 
-directly run DDDQL_visualdetect_extraQ.py in python IDE.
+directly run DDDQL_visualdetect_extraQ.py in python IDE (DDDQL_original.py is original DDDQL network).
 
 or in command line:
 
