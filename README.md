@@ -9,9 +9,12 @@ python3.0 and upper;
 tensorflow==1.9.0;
 
 gym==0.12.1;
-numpy==1.15.4
-imageio==2.4.1
-scikit-image==0.14.1
+
+numpy==1.15.4;
+
+imageio==2.4.1;
+
+scikit-image==0.14.1;
 
 Run:
 
